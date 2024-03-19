@@ -1,12 +1,10 @@
 const {createServer} = require('http');
-
-const express = require('express');
-
+// const express = require('express');
 const dotenv = require('dotenv');
 
 dotenv.config();
-
-let app = express();
+// let app = express();
+const app = require('./config/router-factory');
 
 const http = createServer(app);
 
@@ -17,6 +15,6 @@ process.on('SIGINT', () => http.close((error) => {
     process.exit(error ? 1 : 0);
 }));
 
-app.get('/', (_, res) => res.send('<h1>Resposta!!!!!!!!!!!!!!</h1>'))
+// app.get('/', (_, res) => res.send('<h1>Resposta!!!!!!!!!!!!!!</h1>'))
 
 http.listen(8080, () => console.log('Ouvindo porta 8080'));
