@@ -61,13 +61,13 @@ router.delete(
 		const id = req.params.id;
 		const Post = await model.Post.schema('public');
 		const data = await Post.findByPk(id);
-        const Reply = await model.Reply.schema('public');
+        const reply = await model.reply.schema('public');
 		if (!data) {
 			return resp.status(404).send({error: 'Não encontrado'});
 		}
 		try {
 			const antigo = {...data.dataValues};
-            await Reply.destroy({
+            await reply.destroy({
                 where: {
                     id_post: id
                 },
