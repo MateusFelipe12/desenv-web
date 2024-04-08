@@ -5,7 +5,7 @@ FROM postgres:latest
 ENV POSTGRES_DB blog
 
 # Copie o script SQL para criar o banco de dados
-COPY init.sql /docker-entrypoint-initdb.d/
+# COPY init.sql /docker-entrypoint-initdb.d/
 
 # Defina a porta padrão para o PostgreSQL
 EXPOSE 5432
