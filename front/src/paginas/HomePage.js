@@ -33,6 +33,9 @@ const HomePage = () => {
             <Link to="/novopost">
                 <button>Novo Post</button>
             </Link>
+            <Link to="/newreply">
+                <button>Nova resposta</button>
+            </Link>
           </div>
 
           <div className='row'>

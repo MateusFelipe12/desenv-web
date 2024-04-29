@@ -38,16 +38,13 @@ const Post = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {replies &&
-                                replies.map((reply, index) => {
-                                    <tr key={index}>
-                                        <th key={reply.id}>{reply.id}</th>
-                                        <th key={reply.reply}>{reply.reply}</th>
-                                        <th key={reply.createdAt}>{reply.createdAt}</th>
-                                    </tr>
-                                })
-
-                            }
+                            {replies.map((reply, index) => (
+                                <tr key={index}>
+                                <td>{reply.id}</td>
+                                <td>{reply.reply}</td>
+                                <td>{reply.createdAt}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     )}
